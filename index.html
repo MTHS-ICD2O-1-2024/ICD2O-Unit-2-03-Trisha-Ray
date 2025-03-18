@@ -33,8 +33,7 @@
       sizes="16x16"
       href="./favicon-16x16.png"
     />
-    <link rel="manifest" href="./site.webmanifest" />
-    <title>The Area & Perimeter program</title>
+    <title>Adress With a JS file</title>
   </head>
 
   <body>
@@ -43,32 +42,52 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">The Area & Perimeter program</span>
+          <span class="mdl-layout-title">Adress With a JS file</span>
         </div>
       </header>
       <main class="mdl-layout__content">
         <div class="right-image">
-          <img src="./images/area_and_perimeter.png" />
+          <img src="./images/street.jpg" alt="Street" />
         </div>
-        <div class="page content">
-          The dimensions of a rectangle are: 5 cm and 3 cm
-        </div>
+        <div class="page-content">Please enter the following:</div>
         <br />
-        <div id="multiply-math">
-          <p>The area is:</p>
-        </div>
-        <div id="add-math">
-          <p>The perimeter is:</p>
-        </div>
+        <form>
+          <!-- Numeric Textfield -->
+          <p>Street number</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="street-number"
+            />
+            <label class="mdl-textfield__label" for="sample1"
+              >Street number</label
+            >
+          </div>
+          <!-- Simple Textfield -->
+          <p>Street name</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="street-name" />
+            <label class="mdl-textfield__label" for="Street-name"
+              >Street name</label
+            >
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+          <br />
+          <!-- Accent-colored raised button with ripple -->
+          <button
+            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+            onclick="enterClicked()"
+            type="button"
+          >
+            Enter
+          </button>
+        </form>
         <br />
-        <!-- Accent-colored raised button with ripple -->
-        <button
-          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          onclick="doMathClicked()"
-          type="button"
-        >
-          Calculate
-        </button>
+        <div class="page-content-answer">
+          <div id="user-info"></div>
+        </div>
       </main>
     </div>
   </body>
